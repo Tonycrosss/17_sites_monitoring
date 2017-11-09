@@ -1,5 +1,4 @@
 import requests
-import json
 import whois
 import datetime
 from urllib.parse import urlparse
@@ -22,6 +21,7 @@ def get_domain_name(url):
     domain_name = parsed_uri.netloc
     return domain_name
 
+
 def paid_time_status(exp_date):
     current_date = datetime.datetime.now()
     exp_date_month_ago = exp_date - datetime.timedelta(days=30)
@@ -30,6 +30,7 @@ def paid_time_status(exp_date):
     else:
         exp_status = False
     return exp_status
+
 
 def pretty_output(url, status_code, exp_status):
     print('-' * 50)
@@ -41,7 +42,7 @@ def pretty_output(url, status_code, exp_status):
         print('Сайт проплачен менее чем на месяц')
     print('-' * 50)
 
-# TODO: change to params
+
 def get_domain_expiration_date(domain_name):
     domain_info = whois.whois('{}'.format(domain_name))
     if type(domain_info.expiration_date) == list:
