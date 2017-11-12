@@ -2,6 +2,12 @@
 
 This module checks urls in file with links wich you prefer
 
+# Install requirements
+
+```bash
+pip install -r requirements.txt
+```
+
 # File example
 Your file must contain only urls without commas, just followed 1 by 1.
 Each Url must be at new line

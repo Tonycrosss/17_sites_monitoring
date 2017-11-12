@@ -14,7 +14,7 @@ def load_urls4check(filepath):
 def is_server_respond_with_200(url):
     response = requests.get(url)
     status_code = response.status_code
-    return True if status_code == 200 else False
+    return status_code == 200
 
 
 def get_domain_name(url):
